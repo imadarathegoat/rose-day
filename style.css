@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff4e78, #ff9a9e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 22px;
+  padding: clamp(20px, 5vw, 35px);
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1.2s ease;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+h2 .emoji {
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+h2 .title-text {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  text-align: center;
+}
+
+p {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #ff2f5b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #e60039;
+}
+
+#jarSection {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.jar {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  margin: 20px auto;
+  border: 3px solid rgba(255,255,255,0.7);
+  border-radius: 20px 20px 40px 40px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.jar::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 25px;
+  border: 3px solid rgba(255,255,255,0.7);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+}
+
+.rose {
+  position: absolute;
+  font-size: 22px;
+  cursor: pointer;
+  animation: float 6s ease-in-out infinite;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  min-height: 60px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
